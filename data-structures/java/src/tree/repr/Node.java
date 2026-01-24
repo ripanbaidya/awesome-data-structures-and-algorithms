@@ -1,11 +1,11 @@
-package tree.representation;
+package tree.repr;
 
+/**
+ * Node for binary tree representation - GeeksforGeeks template
+ */
 public class Node {
-    // value of the node
     public int data;
-    // reference of left child
     public Node left;
-    // reference of right child
     public Node right;
 
     public Node(int data) {

@@ -1,4 +1,4 @@
-package tree.representation;
+package tree.repr;
 
 public class BinaryTreeMain {
 

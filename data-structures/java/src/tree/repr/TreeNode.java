@@ -1,11 +1,11 @@
-package tree.representation;
+package tree.repr;
 
+/**
+ * TreeNode for binary tree representation - LeetCode template
+ */
 public class TreeNode {
-    // value of the node
     public int val;
-    // reference of left child
     public TreeNode left;
-    // reference of right child
     public TreeNode right;
 
     public TreeNode(int val) {
