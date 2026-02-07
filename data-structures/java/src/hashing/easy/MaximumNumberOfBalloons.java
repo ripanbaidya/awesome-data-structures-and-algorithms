@@ -8,32 +8,46 @@ import static java.lang.Math.min;
  */
 public class MaximumNumberOfBalloons {
 
-    /* ---------------- Optimal  ---------------- */
-    public int maxNumberOfBalloons(String text) {
-        int result = Integer.MAX_VALUE;
-        int[] freq = new int[26];
+  /* ---------------- Optimal  ---------------- */
 
-        // Count the frequency of each character
-        for (char c : text.toCharArray()) {
-            freq[c - 'a']++;
-        }
+  /**
+   * Count the frequency of each character, then divide the frequency by the number of times
+   * each character is needed, compute the minimum among all the possible characters, return
+   * the result.
+   * Time Complexity: O(n)
+   * Space Complexity: O(1)
+   */
+  public int maxNumberOfBalloons(String text) {
+    int maxBalloons = Integer.MAX_VALUE;
+    int[] charFreq = new int[26];
 
-        // Check the contribution of each character
-        result = min(result, freq['b' - 'a']);
-        result = min(result, freq['a' - 'a']);
-        result = min(result, freq['n' - 'a']);
-        result = min(result, freq['l' - 'a'] / 2);
-        result = min(result, freq['o' - 'a'] / 2);
-
-        return result;
+    // Count frequency of each character in the text
+    for (char ch : text.toCharArray()) {
+      charFreq[ch - 'a']++;
     }
 
-    // Main
-    public static void main(String[] args) {
-        var solution = new MaximumNumberOfBalloons();
+    // Characters required to form "balloon"
+    char[] requiredChars = {'a', 'b', 'l', 'o', 'n'};
+    // Number of times each character is needed
+    int[] need = {1, 1, 2, 2, 1};
 
-        String text = "loonbalxballpoon";
-        int result = solution.maxNumberOfBalloons(text);
-        System.out.println("Maximum number of balloon possible: " + result);
+    for (int i = 0; i < requiredChars.length; i++) {
+      int possibleBalloons =
+          charFreq[requiredChars[i] - 'a'] / need[i];
+      maxBalloons = Math.min(maxBalloons, possibleBalloons);
     }
+
+    return maxBalloons;
+  }
+
+
+  // Main
+  public static void main(String[] args) {
+    var solution = new MaximumNumberOfBalloons();
+
+    String text = "loonbalxballpoon";
+
+    int result = solution.maxNumberOfBalloons(text);
+    System.out.println("Maximum number of balloon possible: " + result);
+  }
 }
