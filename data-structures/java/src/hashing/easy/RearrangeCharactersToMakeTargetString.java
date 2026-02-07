@@ -79,7 +79,7 @@ public class RearrangeCharactersToMakeTargetString {
 
     String s = "ilovecodingonleetcode";
     String target = "code";
-    
+
     int result = solution.rearrangeCharacters(s, target);
     System.out.println(result);
   }
