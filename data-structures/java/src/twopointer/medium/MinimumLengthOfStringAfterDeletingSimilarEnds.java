@@ -1,5 +1,9 @@
 package twopointer.medium;
 
+/**
+ * 1750. Minimum Length of String After Deleting Similar Ends
+ * <a href="https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/description/">Link</a>
+ */
 public class MinimumLengthOfStringAfterDeletingSimilarEnds {
 
   /* ---------------- Optimal: Two Pointer ---------------- */
@@ -47,6 +51,7 @@ public class MinimumLengthOfStringAfterDeletingSimilarEnds {
     return Math.max(0, right - left + 1);
   }
 
+  // Main
   public static void main(String[] args) {
     var solution = new MinimumLengthOfStringAfterDeletingSimilarEnds();
 
