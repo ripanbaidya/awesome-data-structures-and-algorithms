@@ -2,6 +2,10 @@ package prefixsum.medium;
 
 import java.util.HashMap;
 
+/**
+ * 523. Continuous Subarray Sum
+ * <a href="https://leetcode.com/problems/continuous-subarray-sum/description/">Link</a>
+ */
 public class ContinuousSubarraySum {
 
   // Brute Force: Nested Loop
